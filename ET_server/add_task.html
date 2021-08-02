@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  	<link href="css/main.css" rel="stylesheet"/>
+    <title>Add New Task</title>
+  </head>
+  <body>
+    <h1>Add New Task to Work Memo</h1>
+
+    <p><a href="home.html">Home Page</a></p>
+
+    <form name="task_details" action="" method="post">
+      <table>
+        <tr>
+          <td>Task Name</td>
+          <td><input type="text" name="TaskName" id="TaskName" value="" required></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Person In Charge: </td>
+          <td>
+            <select name="Person In Charge" id="PersonIC" required>
+              <option value="">None</option>
+              <option value="Winston">Winson</option>
+              <option value="Henry">Henry</option>
+              <option value="Thomas">Thomas</option>
+              <option value="August">August</option>
+              <option value="Michael">Michael</option>
+              <option value="Standy">Standy</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Related Project</td>
+          <td>
+            <select name="related_project" id="RelatedProj" required>
+              <option value="">None</option>
+              <option value="A">A. 16 Tons</option>
+              <option value="B">B. 28 Seats</option>
+              <option value="C">C. 19 Seats</option>
+              <option value="D">D. 5.5 Tons</option>
+              <option value="E">E. 特來電</option>
+              <option value="F">F. Tecdron</option>
+              <option value="G">G. Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Due Date</td>
+          <td>
+            <input type="date" name="due_date" id="DueDate" required>
+          </td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Task Description (Optional)</td>
+        </tr>
+        <tr>
+          <th colspan="2"><textarea name="description" id="Descr" rows="8" cols="80"></textarea></th>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Add" onclick="aa();"></td>
+        </tr>
+      </table>
+    </form>
+        <!-- <p>
+          Due Date: <input type="date" name="Task Date" value="Date">
+        </p>
+        <input type="checkbox" id="Winston" name="Winston" value="Winston"><label for="Winston">Winston</label><br>
+        <input type="checkbox" id="Henry" name="Henry" value="Henry"><label for="Henry">Henry</label><br>
+        <input type="checkbox" id="Thomas" name="Thomas" value="Thomas"><label for="Thomas">Thomas</label><br>
+        <input type="checkbox" id="August" name="August" value="August"><label for="August">August</label><br>
+        <input type="checkbox" id="Michael" name="Michael" value="Michael"><label for="Michael">Michael</label><br>
+        <input type="checkbox" id="Standy" name="Standy" value="Standy"><label for="Standy">Standy</label><br> -->
+
+
+
+    <script type="text/javascript">
+      function aa()
+      {
+        // get Date
+        // var date = document.querySelector('input[type="date"]');
+
+
+        var xmlhttp;
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("Get", "task_add_choice.php?TaskName="+document.getElementyById("TaskName").value+"&RelatedProj="+document.getElementyById("RelatedProj").value+"&PersonIC="+document.getElementyById("PersonIC").value+"&DueDate='2021-04-09'",false);
+        xmlhttp.send(null);
+        // alert('Task Added!');
+      }
+    </script>
+
+
+
+  </body>
+</html>
